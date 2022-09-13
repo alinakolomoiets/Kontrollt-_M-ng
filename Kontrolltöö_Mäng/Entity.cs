@@ -8,7 +8,7 @@ namespace Kontrolltöö_Mäng
 {
     public interface Entity
     {
-        public int PunktideArv();
+        public int PunctideArv();
         public string Info(); 
     }
 }

@@ -16,7 +16,7 @@ namespace Kontrolltöö_Mäng
             this.arvu = arvu ;
             this.nimetus = nimetus;
         }
-        public int PunktideArv() {return arvu; }
+        public int PunctideArv() {return arvu; }
         public string Info() {return nimetus; }
     }
 }

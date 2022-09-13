@@ -1,2 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using Kontrolltöö_Mäng;
 Console.WriteLine("Hello, World!");
+Tegelane tegelane = new Tegelane("Lina");
+
+tegelane.Info();
