@@ -8,8 +8,8 @@ namespace Kontrolltöö_Mäng
 {
     public class Ese : Entity
     {
-        public int arvu;
-        public string nimetus;
+        private int arvu;
+        private string nimetus;
 
         public Ese (int arvu , string nimetus)
         {

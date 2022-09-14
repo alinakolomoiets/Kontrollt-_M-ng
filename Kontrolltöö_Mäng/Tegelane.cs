@@ -8,23 +8,27 @@ namespace Kontrolltöö_Mäng
 {
     public class Tegelane : Entity, IComparable<Tegelane>
     {
-        string nimi;
+        private string nimi;
         List<Ese> esemed;
         public Tegelane(string nimi)
         {
-            this.nimi = nimi;
-            esemed = new List<Ese>();  
+            this.nimi = nimi; 
         }
         public int CompareTo(Tegelane? other)
         {
             if (other == null) return 1;
             return this.esemed.Count - other.ItemCount();
         }
-        public int ItemCount() //считывает и запоминает новый элемент
+        public int ItemCount() //
         { 
             return esemed.Count;
         }
-        public int PunctideArv()//суммирует кол-во очков с предметов
+        public int lisaEse(int arv) 
+        {
+            esemed.Add(ese);
+            return arv; 
+        }
+        public int PunctideArv()//
         {
             int Sum=0;
             foreach (Ese item in esemed)
@@ -33,14 +37,19 @@ namespace Kontrolltöö_Mäng
             }
             return Sum;
         }
-        public string Info() // показывает информацию о персонаже
+        public string Info() //
         {
             return $"See on {nimi}\n,  {esemed.Count}\n, Summa: {PunctideArv()}\n";
-        }
-      
 
+        }
+        public void valjasataEsemed()
+        {
+            foreach(Ese ese in esemed)
+            {
+                Console.WriteLine(ese.Info());
+            }
+        }
+        
 
     }
-
-
 }

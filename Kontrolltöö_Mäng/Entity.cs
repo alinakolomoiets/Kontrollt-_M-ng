@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Kontrolltöö_Mäng
 {
-    public interface Entity
+    internal interface Entity
     {
-        public int PunctideArv();
-        public string Info(); 
+       int PunctideArv();
+       string Info(); 
     }
 }

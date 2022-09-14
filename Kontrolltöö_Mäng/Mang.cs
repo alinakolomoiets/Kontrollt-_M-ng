@@ -13,13 +13,37 @@ namespace Kontrolltöö_Mäng
         {
             this.mängijad= mängijad;
         }
-        public List<Tegelane> suurimaEsemeteArvuga()
+        public List<Tegelane> SuurimaEsemedArv()
         {
-            List<Tegelane> võitja = new List<Tegelane>();
-            if (num < 0)
-            { 
-                võitja.Clear();
+            List<Tegelane> võitjad = new List<Tegelane>();
+            Tegelane sorted = mängijad[0];
+            foreach(Tegelane t in mängijad)
+            {
+                int num =sorted.CompareTo(t);
+                if (num < 0)
+                {
+                    sorted = t;
+                    võitjad.Clear();
+                }
+                if (num==0) võitjad.Add(t);
             }
+            võitjad.Add(sorted);
+            return võitjad;
+        }
+        public Tegelane suurimaPunktideArv()
+        {
+            int parim = 0;
+            Tegelane võitjad = mängijad[0];
+            foreach (var t in mängijad)
+            {
+                int arv = t.PunctideArv();
+                if (arv>parim)
+                {
+                    parim = arv;
+                    võitjad = t;
+                }
+            }
+            return võitjad;
         }
     }
 }
