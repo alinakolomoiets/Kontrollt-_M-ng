@@ -9,6 +9,11 @@ namespace Kontrolltöö_mäng
 {
     class Program
     {
-        //Peaklass.Uus_mang(8);
+        static void Main(string[] args)
+
+        {
+            Peaklass.Uus_mang(8);
+        }
     }
+
 }
