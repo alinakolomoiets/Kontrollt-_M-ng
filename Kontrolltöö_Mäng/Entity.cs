@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kontrolltöö_Mäng
 {
-    internal interface Entity
+    internal interface Uksus
     {
        int PunctideArv();
        string Info(); 
