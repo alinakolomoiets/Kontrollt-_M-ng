@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Kontrolltöö_Mäng
 {
-    public class Tegelane : Entity, IComparable<Tegelane>
+    public class Tegelane : Uksus, IComparable<Tegelane>
     {
         private string nimi;
         List<Ese> esemed;
         public Tegelane(string nimi)
         {
-            this.nimi = nimi; 
+            this.nimi = nimi;
         }
         public int CompareTo(Tegelane? other)
         {
@@ -20,19 +20,19 @@ namespace Kontrolltöö_Mäng
             return this.esemed.Count - other.ItemCount();
         }
         public int ItemCount() //
-        { 
+        {
             return esemed.Count;
         }
-        public int lisaEse(int arv) 
+        public void lisaEse(Ese uusEse)
         {
-            esemed.Add(ese);
-            return arv; 
+            esemed.Add(uusEse);
+            Console.WriteLine(esemed);
         }
         public int PunctideArv()//
         {
-            int Sum=0;
+            int Sum = 0;
             foreach (Ese item in esemed)
-            { 
+            {
                 Sum += item.PunctideArv();
             }
             return Sum;
@@ -44,12 +44,12 @@ namespace Kontrolltöö_Mäng
         }
         public void valjasataEsemed()
         {
-            foreach(Ese ese in esemed)
+            foreach (Ese ese in esemed)
             {
                 Console.WriteLine(ese.Info());
             }
         }
-        
+
 
     }
 }
